@@ -122,17 +122,26 @@ class StoryList {
       const apiResponse = await axios.patch(`${BASE_URL}/stories/${storyId}`, { token, story: { title, author, url },
     } )
   
-  
-    // const findOwnStory = user.ownStories.findIndex(story => story.StoryId === storyId);
-    // user.ownStories.splice(findOwnStory, 1, {title, author, url} );
-  
+  //this break the getHostName() function and I'm struggling to figure out why.
+  //Stories.js has a window reload line so that the updated stories appear, but this is not an ideal solution.
+  //Please help me undestand what I'm doing wrong.
 
-    // this.stories = this.stories.map(story => {
-    //  if(story.storyId === storyId){
-    //   return {...story, title, author, url};
-    //  }
-    //  return story
-    // });
+  //   const favStoryLoc = user.favorites.findIndex(story => story.StoryId === storyId);
+  //   user.favorites.splice(favStoryLoc, 1,  {title, author, url} );
+  
+  //   const findOwnStory = user.ownStories.findIndex(story => story.StoryId === storyId);
+  //   user.ownStories.splice(findOwnStory, 1, {title, author, url} );
+
+  // console.log(apiResponse)
+
+  //   this.stories = this.stories.map(story => {
+  //    if(story.storyId === storyId){
+  //     console.log('story that needs to be updated: ',  story )
+  //     return {...story, title, author, url};
+  //    }
+  //    console.log('story that was updated: ',  story )
+  //    return story
+  //   });
   }
 }
 

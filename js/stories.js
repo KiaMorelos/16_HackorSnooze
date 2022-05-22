@@ -23,7 +23,11 @@ function generateStoryMarkup(story, isUsersStory) {
   // console.debug("generateStoryMarkup", story);
   const isLoggedIn = Boolean(currentUser);
   const belongsToUser = isUsersStory;
+  console.log(story)
+
   const hostName = story.getHostName();
+  console.log(hostName)
+
   return $(`
       <li id="${story.storyId}">
       ${isLoggedIn && belongsToUser ? allowDelete(): ""}
