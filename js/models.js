@@ -106,7 +106,7 @@ class StoryList {
 
      //find index location of story in the favorites array, and own stories
      //delete from the array
-     const favStoryLoc = user.favorites.findIndex(story => story.StoryId === storyId);
+    const favStoryLoc = user.favorites.findIndex(story => story.StoryId === storyId);
     user.favorites.splice(favStoryLoc, 1);
     
     const ownStoryLoc = user.ownStories.findIndex(story => story.StoryId === storyId);
@@ -126,22 +126,22 @@ class StoryList {
   //Stories.js has a window reload line so that the updated stories appear, but this is not an ideal solution.
   //Please help me undestand what I'm doing wrong.
 
-  //   const favStoryLoc = user.favorites.findIndex(story => story.StoryId === storyId);
-  //   user.favorites.splice(favStoryLoc, 1,  {title, author, url} );
+    const favStoryLoc = user.favorites.findIndex(story => story.StoryId === storyId);
+    user.favorites.splice(favStoryLoc, 1,  {title, author, url} );
   
-  //   const findOwnStory = user.ownStories.findIndex(story => story.StoryId === storyId);
-  //   user.ownStories.splice(findOwnStory, 1, {title, author, url} );
+    const findOwnStory = user.ownStories.findIndex(story => story.StoryId === storyId);
+    user.ownStories.splice(findOwnStory, 1, {title, author, url} );
 
-  // console.log(apiResponse)
+  console.log(apiResponse)
 
-  //   this.stories = this.stories.map(story => {
-  //    if(story.storyId === storyId){
-  //     console.log('story that needs to be updated: ',  story )
-  //     return {...story, title, author, url};
-  //    }
-  //    console.log('story that was updated: ',  story )
-  //    return story
-  //   });
+    this.stories = this.stories.map(story => {
+     if(story.storyId === storyId){
+      console.log('story that needs to be updated: ',  story )
+      return {...story, title, author, url};
+     }
+     console.log('story that was updated: ',  story )
+     return story
+    });
   }
 }
 

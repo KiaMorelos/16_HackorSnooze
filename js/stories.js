@@ -204,7 +204,7 @@ async function updateStory(evt){
   $("#active-edit").empty();
   $(".storeThis").empty();
   $("#edit-story-form").trigger('reset').hide()
-  window.location.reload()
+  // window.location.reload()
 }
 
 $editForm.on("submit", updateStory)
